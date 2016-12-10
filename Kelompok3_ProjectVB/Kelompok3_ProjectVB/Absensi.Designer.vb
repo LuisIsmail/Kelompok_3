@@ -22,6 +22,7 @@ Partial Class Absensi
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Absensi))
         Me.NIM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
@@ -42,9 +43,17 @@ Partial Class Absensi
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
+        Me.AbsenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AbsenTableAdapter = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.AbsenTableAdapter()
+        Me.NIMDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KeteranganDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tabel.SuspendLayout()
         Me.Detail.SuspendLayout()
+        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AbsenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NIM
@@ -56,9 +65,11 @@ Partial Class Absensi
         'DataGridView2
         '
         Me.DataGridView2.AllowUserToOrderColumns = True
+        Me.DataGridView2.AutoGenerateColumns = False
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NIM, Me.Nama, Me.Keterangan})
-        Me.DataGridView2.Location = New System.Drawing.Point(-6, 15)
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NIM, Me.Nama, Me.Keterangan, Me.NIMDataGridViewTextBoxColumn, Me.NamaDataGridViewTextBoxColumn, Me.KeteranganDataGridViewTextBoxColumn})
+        Me.DataGridView2.DataSource = Me.AbsenBindingSource
+        Me.DataGridView2.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(341, 248)
         Me.DataGridView2.TabIndex = 0
@@ -165,6 +176,7 @@ Partial Class Absensi
         '
         'TextBox6
         '
+        Me.TextBox6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AbsenBindingSource, "Keterangan", True))
         Me.TextBox6.Location = New System.Drawing.Point(69, 74)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(139, 20)
@@ -198,6 +210,7 @@ Partial Class Absensi
         '
         'TextBox5
         '
+        Me.TextBox5.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.AbsenBindingSource, "Nama", True))
         Me.TextBox5.Location = New System.Drawing.Point(69, 43)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(139, 20)
@@ -214,6 +227,7 @@ Partial Class Absensi
         '
         'TextBox4
         '
+        Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AbsenBindingSource, "NIM", True))
         Me.TextBox4.Location = New System.Drawing.Point(69, 12)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(139, 20)
@@ -241,10 +255,43 @@ Partial Class Absensi
         Me.Button1.TabIndex = 36
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Projekvb1DataSet
+        '
+        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
+        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AbsenBindingSource
+        '
+        Me.AbsenBindingSource.DataMember = "Absen"
+        Me.AbsenBindingSource.DataSource = Me.Projekvb1DataSet
+        '
+        'AbsenTableAdapter
+        '
+        Me.AbsenTableAdapter.ClearBeforeFill = True
+        '
+        'NIMDataGridViewTextBoxColumn
+        '
+        Me.NIMDataGridViewTextBoxColumn.DataPropertyName = "NIM"
+        Me.NIMDataGridViewTextBoxColumn.HeaderText = "NIM"
+        Me.NIMDataGridViewTextBoxColumn.Name = "NIMDataGridViewTextBoxColumn"
+        '
+        'NamaDataGridViewTextBoxColumn
+        '
+        Me.NamaDataGridViewTextBoxColumn.DataPropertyName = "Nama"
+        Me.NamaDataGridViewTextBoxColumn.HeaderText = "Nama"
+        Me.NamaDataGridViewTextBoxColumn.Name = "NamaDataGridViewTextBoxColumn"
+        '
+        'KeteranganDataGridViewTextBoxColumn
+        '
+        Me.KeteranganDataGridViewTextBoxColumn.DataPropertyName = "Keterangan"
+        Me.KeteranganDataGridViewTextBoxColumn.HeaderText = "Keterangan"
+        Me.KeteranganDataGridViewTextBoxColumn.Name = "KeteranganDataGridViewTextBoxColumn"
+        '
         'Absensi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(612, 326)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Button5)
@@ -261,6 +308,8 @@ Partial Class Absensi
         Me.Tabel.ResumeLayout(False)
         Me.Detail.ResumeLayout(False)
         Me.Detail.PerformLayout()
+        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AbsenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -284,4 +333,10 @@ Partial Class Absensi
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Projekvb1DataSet As Kelompok3_ProjectVB.projekvb1DataSet
+    Friend WithEvents AbsenBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents AbsenTableAdapter As Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.AbsenTableAdapter
+    Friend WithEvents NIMDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NamaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents KeteranganDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

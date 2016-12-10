@@ -22,30 +22,67 @@ Partial Class Dosen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim NIKLabel As System.Windows.Forms.Label
+        Dim NamaLabel As System.Windows.Forms.Label
+        Dim Lulusan__S1__S2__S3_Label As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dosen))
+        Dim Label1 As System.Windows.Forms.Label
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Detail = New System.Windows.Forms.GroupBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Keterangan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NIM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NIKTextBox = New System.Windows.Forms.TextBox()
+        Me.DosenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
+        Me.NamaTextBox = New System.Windows.Forms.TextBox()
+        Me.Lulusan__S1__S2__S3_TextBox = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Tabel = New System.Windows.Forms.GroupBox()
+        Me.DosenDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DosenTableAdapter = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.DosenTableAdapter()
+        Me.TableAdapterManager = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager()
+        NIKLabel = New System.Windows.Forms.Label()
+        NamaLabel = New System.Windows.Forms.Label()
+        Lulusan__S1__S2__S3_Label = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         Me.Detail.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Tabel.SuspendLayout()
+        CType(Me.DosenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'NIKLabel
+        '
+        NIKLabel.AutoSize = True
+        NIKLabel.Location = New System.Drawing.Point(18, 22)
+        NIKLabel.Name = "NIKLabel"
+        NIKLabel.Size = New System.Drawing.Size(28, 13)
+        NIKLabel.TabIndex = 0
+        NIKLabel.Text = "NIK:"
+        '
+        'NamaLabel
+        '
+        NamaLabel.AutoSize = True
+        NamaLabel.Location = New System.Drawing.Point(18, 48)
+        NamaLabel.Name = "NamaLabel"
+        NamaLabel.Size = New System.Drawing.Size(38, 13)
+        NamaLabel.TabIndex = 2
+        NamaLabel.Text = "Nama:"
+        '
+        'Lulusan__S1__S2__S3_Label
+        '
+        Lulusan__S1__S2__S3_Label.AutoSize = True
+        Lulusan__S1__S2__S3_Label.Location = New System.Drawing.Point(18, 74)
+        Lulusan__S1__S2__S3_Label.Name = "Lulusan__S1__S2__S3_Label"
+        Lulusan__S1__S2__S3_Label.Size = New System.Drawing.Size(107, 13)
+        Lulusan__S1__S2__S3_Label.TabIndex = 4
+        Lulusan__S1__S2__S3_Label.Text = "Lulusan (S1, S2, S3):"
         '
         'Label7
         '
@@ -62,84 +99,53 @@ Partial Class Dosen
         'Detail
         '
         Me.Detail.BackColor = System.Drawing.Color.Transparent
-        Me.Detail.Controls.Add(Me.TextBox6)
-        Me.Detail.Controls.Add(Me.Label6)
-        Me.Detail.Controls.Add(Me.TextBox5)
-        Me.Detail.Controls.Add(Me.Label5)
-        Me.Detail.Controls.Add(Me.TextBox4)
-        Me.Detail.Controls.Add(Me.Label4)
+        Me.Detail.Controls.Add(NIKLabel)
+        Me.Detail.Controls.Add(Me.NIKTextBox)
+        Me.Detail.Controls.Add(NamaLabel)
+        Me.Detail.Controls.Add(Me.NamaTextBox)
+        Me.Detail.Controls.Add(Lulusan__S1__S2__S3_Label)
+        Me.Detail.Controls.Add(Me.Lulusan__S1__S2__S3_TextBox)
         Me.Detail.ForeColor = System.Drawing.Color.White
         Me.Detail.Location = New System.Drawing.Point(13, 50)
         Me.Detail.Name = "Detail"
-        Me.Detail.Size = New System.Drawing.Size(226, 117)
+        Me.Detail.Size = New System.Drawing.Size(237, 124)
         Me.Detail.TabIndex = 28
         Me.Detail.TabStop = False
         Me.Detail.Text = "Detail"
         '
-        'TextBox6
+        'NIKTextBox
         '
-        Me.TextBox6.Location = New System.Drawing.Point(81, 78)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(139, 20)
-        Me.TextBox6.TabIndex = 5
+        Me.NIKTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "NIK", True))
+        Me.NIKTextBox.Location = New System.Drawing.Point(131, 19)
+        Me.NIKTextBox.Name = "NIKTextBox"
+        Me.NIKTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NIKTextBox.TabIndex = 1
         '
-        'Label6
+        'DosenBindingSource
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(19, 81)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(44, 13)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "Lulusan"
+        Me.DosenBindingSource.DataMember = "Dosen"
+        Me.DosenBindingSource.DataSource = Me.Projekvb1DataSet
         '
-        'TextBox5
+        'Projekvb1DataSet
         '
-        Me.TextBox5.Location = New System.Drawing.Point(81, 47)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(139, 20)
-        Me.TextBox5.TabIndex = 3
+        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
+        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Label5
+        'NamaTextBox
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 50)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 13)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Nama"
+        Me.NamaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "Nama", True))
+        Me.NamaTextBox.Location = New System.Drawing.Point(131, 45)
+        Me.NamaTextBox.Name = "NamaTextBox"
+        Me.NamaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NamaTextBox.TabIndex = 3
         '
-        'TextBox4
+        'Lulusan__S1__S2__S3_TextBox
         '
-        Me.TextBox4.Location = New System.Drawing.Point(81, 16)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(139, 20)
-        Me.TextBox4.TabIndex = 1
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 19)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(25, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "NIK"
-        '
-        'Keterangan
-        '
-        Me.Keterangan.DataPropertyName = "Keterangan"
-        Me.Keterangan.HeaderText = "Keterangan"
-        Me.Keterangan.Name = "Keterangan"
-        '
-        'Nama
-        '
-        Me.Nama.HeaderText = "Nama"
-        Me.Nama.Name = "Nama"
-        '
-        'NIM
-        '
-        Me.NIM.DataPropertyName = "NIM"
-        Me.NIM.HeaderText = "NIM"
-        Me.NIM.Name = "NIM"
+        Me.Lulusan__S1__S2__S3_TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "Lulusan (S1, S2, S3)", True))
+        Me.Lulusan__S1__S2__S3_TextBox.Location = New System.Drawing.Point(131, 71)
+        Me.Lulusan__S1__S2__S3_TextBox.Name = "Lulusan__S1__S2__S3_TextBox"
+        Me.Lulusan__S1__S2__S3_TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Lulusan__S1__S2__S3_TextBox.TabIndex = 5
         '
         'Button6
         '
@@ -166,16 +172,6 @@ Partial Class Dosen
         Me.Button5.Size = New System.Drawing.Size(64, 63)
         Me.Button5.TabIndex = 33
         Me.Button5.UseVisualStyleBackColor = False
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.AllowUserToOrderColumns = True
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NIM, Me.Nama, Me.Keterangan})
-        Me.DataGridView2.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(341, 248)
-        Me.DataGridView2.TabIndex = 0
         '
         'Button4
         '
@@ -216,17 +212,34 @@ Partial Class Dosen
         Me.Button2.TabIndex = 30
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Tabel
+        'DosenDataGridView
         '
-        Me.Tabel.BackColor = System.Drawing.Color.Transparent
-        Me.Tabel.Controls.Add(Me.DataGridView2)
-        Me.Tabel.ForeColor = System.Drawing.Color.White
-        Me.Tabel.Location = New System.Drawing.Point(256, 50)
-        Me.Tabel.Name = "Tabel"
-        Me.Tabel.Size = New System.Drawing.Size(352, 273)
-        Me.Tabel.TabIndex = 29
-        Me.Tabel.TabStop = False
-        Me.Tabel.Text = "Tabel"
+        Me.DosenDataGridView.AutoGenerateColumns = False
+        Me.DosenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DosenDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.DosenDataGridView.DataSource = Me.DosenBindingSource
+        Me.DosenDataGridView.Location = New System.Drawing.Point(278, 69)
+        Me.DosenDataGridView.Name = "DosenDataGridView"
+        Me.DosenDataGridView.Size = New System.Drawing.Size(345, 252)
+        Me.DosenDataGridView.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "NIK"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "NIK"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Nama"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nama"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Lulusan (S1, S2, S3)"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Lulusan (S1, S2, S3)"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'Button1
         '
@@ -241,11 +254,48 @@ Partial Class Dosen
         Me.Button1.TabIndex = 27
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'DosenTableAdapter
+        '
+        Me.DosenTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AbsenTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.DosenTableAdapter = Me.DosenTableAdapter
+        Me.TableAdapterManager.J1TableAdapter = Nothing
+        Me.TableAdapterManager.J3TableAdapter = Nothing
+        Me.TableAdapterManager.J5TableAdapter = Nothing
+        Me.TableAdapterManager.J7TableAdapter = Nothing
+        Me.TableAdapterManager.Mhs1TableAdapter = Nothing
+        Me.TableAdapterManager.Mhs3TableAdapter = Nothing
+        Me.TableAdapterManager.Mhs5TableAdapter = Nothing
+        Me.TableAdapterManager.Mhs7TableAdapter = Nothing
+        Me.TableAdapterManager.MK1TableAdapter = Nothing
+        Me.TableAdapterManager.MK3TableAdapter = Nothing
+        Me.TableAdapterManager.MK5TableAdapter = Nothing
+        Me.TableAdapterManager.MK7TableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.BackColor = System.Drawing.Color.Transparent
+        Label1.ForeColor = System.Drawing.Color.White
+        Label1.Location = New System.Drawing.Point(277, 55)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(34, 13)
+        Label1.TabIndex = 6
+        Label1.Text = "Tabel"
+        '
         'Dosen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(614, 328)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(655, 336)
+        Me.Controls.Add(Label1)
+        Me.Controls.Add(Me.DosenDataGridView)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Detail)
         Me.Controls.Add(Me.Button6)
@@ -253,35 +303,35 @@ Partial Class Dosen
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Tabel)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Dosen"
         Me.Text = "Dosen"
         Me.Detail.ResumeLayout(False)
         Me.Detail.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Tabel.ResumeLayout(False)
+        CType(Me.DosenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Detail As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Keterangan As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Nama As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NIM As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Tabel As System.Windows.Forms.GroupBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Projekvb1DataSet As Kelompok3_ProjectVB.projekvb1DataSet
+    Friend WithEvents DosenBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DosenTableAdapter As Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.DosenTableAdapter
+    Friend WithEvents TableAdapterManager As Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager
+    Friend WithEvents NIKTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents NamaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Lulusan__S1__S2__S3_TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DosenDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

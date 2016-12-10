@@ -24,4 +24,8 @@
         Me.Hide()
         Jadwal.Show()
     End Sub
+
+    Private Sub keluar_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles keluar_Button.Click
+        Me.Close()
+    End Sub
 End Class

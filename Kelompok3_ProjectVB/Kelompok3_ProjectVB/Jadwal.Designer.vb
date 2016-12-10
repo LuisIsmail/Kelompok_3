@@ -127,6 +127,7 @@ Partial Class Jadwal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(457, 157)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.buttonKeluar)

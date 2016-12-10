@@ -128,6 +128,7 @@ Partial Class Mahasiswa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(451, 198)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
