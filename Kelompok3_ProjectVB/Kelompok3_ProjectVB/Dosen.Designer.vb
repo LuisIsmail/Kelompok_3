@@ -26,8 +26,8 @@ Partial Class Dosen
         Dim NIKLabel As System.Windows.Forms.Label
         Dim NamaLabel As System.Windows.Forms.Label
         Dim Lulusan__S1__S2__S3_Label As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dosen))
         Dim Label1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dosen))
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Detail = New System.Windows.Forms.GroupBox()
         Me.NIKTextBox = New System.Windows.Forms.TextBox()
@@ -84,6 +84,17 @@ Partial Class Dosen
         Lulusan__S1__S2__S3_Label.TabIndex = 4
         Lulusan__S1__S2__S3_Label.Text = "Lulusan (S1, S2, S3):"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.BackColor = System.Drawing.Color.Transparent
+        Label1.ForeColor = System.Drawing.Color.White
+        Label1.Location = New System.Drawing.Point(277, 55)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(34, 13)
+        Label1.TabIndex = 6
+        Label1.Text = "Tabel"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -108,7 +119,7 @@ Partial Class Dosen
         Me.Detail.ForeColor = System.Drawing.Color.White
         Me.Detail.Location = New System.Drawing.Point(13, 50)
         Me.Detail.Name = "Detail"
-        Me.Detail.Size = New System.Drawing.Size(237, 124)
+        Me.Detail.Size = New System.Drawing.Size(237, 105)
         Me.Detail.TabIndex = 28
         Me.Detail.TabStop = False
         Me.Detail.Text = "Detail"
@@ -277,23 +288,12 @@ Partial Class Dosen
         Me.TableAdapterManager.MK7TableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.BackColor = System.Drawing.Color.Transparent
-        Label1.ForeColor = System.Drawing.Color.White
-        Label1.Location = New System.Drawing.Point(277, 55)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(34, 13)
-        Label1.TabIndex = 6
-        Label1.Text = "Tabel"
-        '
         'Dosen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(655, 336)
+        Me.ClientSize = New System.Drawing.Size(631, 330)
         Me.Controls.Add(Label1)
         Me.Controls.Add(Me.DosenDataGridView)
         Me.Controls.Add(Me.Label7)
