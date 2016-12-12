@@ -88,7 +88,17 @@
               <Mapping SourceColumn="Nama" DataSetColumn="Nama" />
               <Mapping SourceColumn="Lulusan (S1, S2, S3)" DataSetColumn="Lulusan (S1, S2, S3)" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="projekvb1ConnectionString (MySettings)" DbObjectName="Dosen" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="cariQuery" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="cariQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="cariQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT NIK, Nama, [Lulusan (S1, S2, S3)] FROM Dosen
+where NIK like cari or Nama like cari</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="J1TableAdapter" GeneratorDataComponentClassName="J1TableAdapter" Name="J1" UserDataComponentName="J1TableAdapter">
             <MainSource>

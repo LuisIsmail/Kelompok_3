@@ -23,16 +23,15 @@ Partial Class Dosen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim Label1 As System.Windows.Forms.Label
+        Dim Label2 As System.Windows.Forms.Label
         Dim NIKLabel As System.Windows.Forms.Label
         Dim NamaLabel As System.Windows.Forms.Label
         Dim Lulusan__S1__S2__S3_Label As System.Windows.Forms.Label
-        Dim Label1 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dosen))
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Detail = New System.Windows.Forms.GroupBox()
         Me.NIKTextBox = New System.Windows.Forms.TextBox()
-        Me.DosenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
         Me.NamaTextBox = New System.Windows.Forms.TextBox()
         Me.Lulusan__S1__S2__S3_TextBox = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -40,49 +39,27 @@ Partial Class Dosen
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CariButton = New System.Windows.Forms.Button()
         Me.DosenDataGridView = New System.Windows.Forms.DataGridView()
+        Me.cariText = New System.Windows.Forms.TextBox()
+        Me.DosenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.DosenTableAdapter = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.DosenTableAdapter()
         Me.TableAdapterManager = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager()
+        Label1 = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
         NIKLabel = New System.Windows.Forms.Label()
         NamaLabel = New System.Windows.Forms.Label()
         Lulusan__S1__S2__S3_Label = New System.Windows.Forms.Label()
-        Label1 = New System.Windows.Forms.Label()
         Me.Detail.SuspendLayout()
+        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DosenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'NIKLabel
-        '
-        NIKLabel.AutoSize = True
-        NIKLabel.Location = New System.Drawing.Point(18, 22)
-        NIKLabel.Name = "NIKLabel"
-        NIKLabel.Size = New System.Drawing.Size(28, 13)
-        NIKLabel.TabIndex = 0
-        NIKLabel.Text = "NIK:"
-        '
-        'NamaLabel
-        '
-        NamaLabel.AutoSize = True
-        NamaLabel.Location = New System.Drawing.Point(18, 48)
-        NamaLabel.Name = "NamaLabel"
-        NamaLabel.Size = New System.Drawing.Size(38, 13)
-        NamaLabel.TabIndex = 2
-        NamaLabel.Text = "Nama:"
-        '
-        'Lulusan__S1__S2__S3_Label
-        '
-        Lulusan__S1__S2__S3_Label.AutoSize = True
-        Lulusan__S1__S2__S3_Label.Location = New System.Drawing.Point(18, 74)
-        Lulusan__S1__S2__S3_Label.Name = "Lulusan__S1__S2__S3_Label"
-        Lulusan__S1__S2__S3_Label.Size = New System.Drawing.Size(107, 13)
-        Lulusan__S1__S2__S3_Label.TabIndex = 4
-        Lulusan__S1__S2__S3_Label.Text = "Lulusan (S1, S2, S3):"
         '
         'Label1
         '
@@ -94,6 +71,44 @@ Partial Class Dosen
         Label1.Size = New System.Drawing.Size(34, 13)
         Label1.TabIndex = 6
         Label1.Text = "Tabel"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.BackColor = System.Drawing.Color.Transparent
+        Label2.ForeColor = System.Drawing.Color.White
+        Label2.Location = New System.Drawing.Point(373, 44)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(31, 13)
+        Label2.TabIndex = 36
+        Label2.Text = "Cari :"
+        '
+        'NIKLabel
+        '
+        NIKLabel.AutoSize = True
+        NIKLabel.Location = New System.Drawing.Point(9, 23)
+        NIKLabel.Name = "NIKLabel"
+        NIKLabel.Size = New System.Drawing.Size(28, 13)
+        NIKLabel.TabIndex = 0
+        NIKLabel.Text = "NIK:"
+        '
+        'NamaLabel
+        '
+        NamaLabel.AutoSize = True
+        NamaLabel.Location = New System.Drawing.Point(9, 49)
+        NamaLabel.Name = "NamaLabel"
+        NamaLabel.Size = New System.Drawing.Size(38, 13)
+        NamaLabel.TabIndex = 2
+        NamaLabel.Text = "Nama:"
+        '
+        'Lulusan__S1__S2__S3_Label
+        '
+        Lulusan__S1__S2__S3_Label.AutoSize = True
+        Lulusan__S1__S2__S3_Label.Location = New System.Drawing.Point(9, 75)
+        Lulusan__S1__S2__S3_Label.Name = "Lulusan__S1__S2__S3_Label"
+        Lulusan__S1__S2__S3_Label.Size = New System.Drawing.Size(107, 13)
+        Lulusan__S1__S2__S3_Label.TabIndex = 4
+        Lulusan__S1__S2__S3_Label.Text = "Lulusan (S1, S2, S3):"
         '
         'Label7
         '
@@ -119,7 +134,7 @@ Partial Class Dosen
         Me.Detail.ForeColor = System.Drawing.Color.White
         Me.Detail.Location = New System.Drawing.Point(13, 50)
         Me.Detail.Name = "Detail"
-        Me.Detail.Size = New System.Drawing.Size(237, 105)
+        Me.Detail.Size = New System.Drawing.Size(249, 106)
         Me.Detail.TabIndex = 28
         Me.Detail.TabStop = False
         Me.Detail.Text = "Detail"
@@ -127,25 +142,15 @@ Partial Class Dosen
         'NIKTextBox
         '
         Me.NIKTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "NIK", True))
-        Me.NIKTextBox.Location = New System.Drawing.Point(131, 19)
+        Me.NIKTextBox.Location = New System.Drawing.Point(122, 20)
         Me.NIKTextBox.Name = "NIKTextBox"
         Me.NIKTextBox.Size = New System.Drawing.Size(100, 20)
         Me.NIKTextBox.TabIndex = 1
         '
-        'DosenBindingSource
-        '
-        Me.DosenBindingSource.DataMember = "Dosen"
-        Me.DosenBindingSource.DataSource = Me.Projekvb1DataSet
-        '
-        'Projekvb1DataSet
-        '
-        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
-        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'NamaTextBox
         '
         Me.NamaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "Nama", True))
-        Me.NamaTextBox.Location = New System.Drawing.Point(131, 45)
+        Me.NamaTextBox.Location = New System.Drawing.Point(122, 46)
         Me.NamaTextBox.Name = "NamaTextBox"
         Me.NamaTextBox.Size = New System.Drawing.Size(100, 20)
         Me.NamaTextBox.TabIndex = 3
@@ -153,7 +158,7 @@ Partial Class Dosen
         'Lulusan__S1__S2__S3_TextBox
         '
         Me.Lulusan__S1__S2__S3_TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "Lulusan (S1, S2, S3)", True))
-        Me.Lulusan__S1__S2__S3_TextBox.Location = New System.Drawing.Point(131, 71)
+        Me.Lulusan__S1__S2__S3_TextBox.Location = New System.Drawing.Point(122, 72)
         Me.Lulusan__S1__S2__S3_TextBox.Name = "Lulusan__S1__S2__S3_TextBox"
         Me.Lulusan__S1__S2__S3_TextBox.Size = New System.Drawing.Size(100, 20)
         Me.Lulusan__S1__S2__S3_TextBox.TabIndex = 5
@@ -165,7 +170,7 @@ Partial Class Dosen
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Location = New System.Drawing.Point(175, 258)
+        Me.Button6.Location = New System.Drawing.Point(175, 239)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(64, 63)
         Me.Button6.TabIndex = 34
@@ -178,7 +183,7 @@ Partial Class Dosen
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(94, 258)
+        Me.Button5.Location = New System.Drawing.Point(94, 239)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(64, 63)
         Me.Button5.TabIndex = 33
@@ -191,7 +196,7 @@ Partial Class Dosen
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(13, 258)
+        Me.Button4.Location = New System.Drawing.Point(13, 239)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(64, 63)
         Me.Button4.TabIndex = 32
@@ -204,7 +209,7 @@ Partial Class Dosen
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(175, 190)
+        Me.Button3.Location = New System.Drawing.Point(175, 171)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(64, 63)
         Me.Button3.TabIndex = 31
@@ -217,11 +222,37 @@ Partial Class Dosen
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(94, 190)
+        Me.Button2.Location = New System.Drawing.Point(94, 171)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(64, 63)
         Me.Button2.TabIndex = 30
         Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(13, 171)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(64, 63)
+        Me.Button1.TabIndex = 27
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'CariButton
+        '
+        Me.CariButton.BackColor = System.Drawing.Color.Transparent
+        Me.CariButton.BackgroundImage = CType(resources.GetObject("CariButton.BackgroundImage"), System.Drawing.Image)
+        Me.CariButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CariButton.FlatAppearance.BorderSize = 0
+        Me.CariButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CariButton.Location = New System.Drawing.Point(591, 36)
+        Me.CariButton.Name = "CariButton"
+        Me.CariButton.Size = New System.Drawing.Size(31, 28)
+        Me.CariButton.TabIndex = 38
+        Me.CariButton.UseVisualStyleBackColor = False
         '
         'DosenDataGridView
         '
@@ -229,10 +260,28 @@ Partial Class Dosen
         Me.DosenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DosenDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.DosenDataGridView.DataSource = Me.DosenBindingSource
-        Me.DosenDataGridView.Location = New System.Drawing.Point(278, 69)
+        Me.DosenDataGridView.Location = New System.Drawing.Point(280, 70)
         Me.DosenDataGridView.Name = "DosenDataGridView"
-        Me.DosenDataGridView.Size = New System.Drawing.Size(345, 252)
-        Me.DosenDataGridView.TabIndex = 0
+        Me.DosenDataGridView.Size = New System.Drawing.Size(342, 220)
+        Me.DosenDataGridView.TabIndex = 38
+        '
+        'cariText
+        '
+        Me.cariText.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "NIK", True))
+        Me.cariText.Location = New System.Drawing.Point(410, 41)
+        Me.cariText.Name = "cariText"
+        Me.cariText.Size = New System.Drawing.Size(175, 20)
+        Me.cariText.TabIndex = 6
+        '
+        'DosenBindingSource
+        '
+        Me.DosenBindingSource.DataMember = "Dosen"
+        Me.DosenBindingSource.DataSource = Me.Projekvb1DataSet
+        '
+        'Projekvb1DataSet
+        '
+        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
+        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DataGridViewTextBoxColumn1
         '
@@ -252,19 +301,6 @@ Partial Class Dosen
         Me.DataGridViewTextBoxColumn3.HeaderText = "Lulusan (S1, S2, S3)"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(13, 190)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(64, 63)
-        Me.Button1.TabIndex = 27
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'DosenTableAdapter
         '
         Me.DosenTableAdapter.ClearBeforeFill = True
@@ -273,7 +309,8 @@ Partial Class Dosen
         '
         Me.TableAdapterManager.AbsenTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.DosenTableAdapter = Me.DosenTableAdapter
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DosenTableAdapter = Nothing
         Me.TableAdapterManager.J1TableAdapter = Nothing
         Me.TableAdapterManager.J3TableAdapter = Nothing
         Me.TableAdapterManager.J5TableAdapter = Nothing
@@ -292,10 +329,14 @@ Partial Class Dosen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(631, 330)
-        Me.Controls.Add(Label1)
+        Me.ClientSize = New System.Drawing.Size(661, 322)
+        Me.Controls.Add(Me.cariText)
         Me.Controls.Add(Me.DosenDataGridView)
+        Me.Controls.Add(Label2)
+        Me.Controls.Add(Me.CariButton)
+        Me.Controls.Add(Label1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Detail)
         Me.Controls.Add(Me.Button6)
@@ -308,9 +349,9 @@ Partial Class Dosen
         Me.Text = "Dosen"
         Me.Detail.ResumeLayout(False)
         Me.Detail.PerformLayout()
+        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DosenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -327,6 +368,7 @@ Partial Class Dosen
     Friend WithEvents DosenBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DosenTableAdapter As Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.DosenTableAdapter
     Friend WithEvents TableAdapterManager As Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager
+    Friend WithEvents CariButton As System.Windows.Forms.Button
     Friend WithEvents NIKTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NamaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Lulusan__S1__S2__S3_TextBox As System.Windows.Forms.TextBox
@@ -334,4 +376,5 @@ Partial Class Dosen
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cariText As System.Windows.Forms.TextBox
 End Class

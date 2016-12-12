@@ -14,9 +14,12 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Me.Validate()
-        Me.DosenBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.Projekvb1DataSet)
+        On Error GoTo SaveErr
+        DosenBindingSource.EndEdit()
+        DosenTableAdapter.Update(Projekvb1DataSet.Dosen)
+        MessageBox.Show("Tersimpan !")
+SaveErr:
+        Exit Sub
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -24,7 +27,7 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        DosenBindingSource.ResetCurrentItem()
+        Me.DosenTableAdapter.Fill(Me.Projekvb1DataSet.Dosen)
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
@@ -33,6 +36,10 @@
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
         DosenBindingSource.RemoveCurrent()
+        MessageBox.Show("Terhapus !")
     End Sub
 
+    Private Sub CariButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CariButton.Click
+        DosenTableAdapter.cariQuery(Projekvb1DataSet.Dosen)
+    End Sub
 End Class

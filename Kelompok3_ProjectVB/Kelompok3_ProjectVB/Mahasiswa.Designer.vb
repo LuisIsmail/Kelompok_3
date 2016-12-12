@@ -118,9 +118,9 @@ Partial Class Mahasiswa
         Me.buttonKeluar.FlatAppearance.BorderSize = 0
         Me.buttonKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.buttonKeluar.ForeColor = System.Drawing.Color.Transparent
-        Me.buttonKeluar.Location = New System.Drawing.Point(396, 154)
+        Me.buttonKeluar.Location = New System.Drawing.Point(390, 154)
         Me.buttonKeluar.Name = "buttonKeluar"
-        Me.buttonKeluar.Size = New System.Drawing.Size(50, 41)
+        Me.buttonKeluar.Size = New System.Drawing.Size(56, 48)
         Me.buttonKeluar.TabIndex = 31
         Me.buttonKeluar.UseVisualStyleBackColor = False
         '
@@ -129,7 +129,7 @@ Partial Class Mahasiswa
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(451, 198)
+        Me.ClientSize = New System.Drawing.Size(451, 214)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.buttonKeluar)
