@@ -103,6 +103,30 @@
     <Compile Include="Mahasiswa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mhs1.Designer.vb">
+      <DependentUpon>Mhs1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mhs1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mhs3.Designer.vb">
+      <DependentUpon>Mhs3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mhs3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mhs5.Designer.vb">
+      <DependentUpon>Mhs5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mhs5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mhs7.Designer.vb">
+      <DependentUpon>Mhs7.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mhs7.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MK.Designer.vb">
       <DependentUpon>MK.vb</DependentUpon>
     </Compile>
@@ -145,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mahasiswa.resx">
       <DependentUpon>Mahasiswa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mhs1.resx">
+      <DependentUpon>Mhs1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MK.resx">
       <DependentUpon>MK.vb</DependentUpon>
