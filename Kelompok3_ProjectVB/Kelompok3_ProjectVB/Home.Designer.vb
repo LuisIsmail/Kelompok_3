@@ -41,7 +41,7 @@ Partial Class Home
         Me.keluar_Button.FlatAppearance.BorderSize = 0
         Me.keluar_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.keluar_Button.ForeColor = System.Drawing.Color.Black
-        Me.keluar_Button.Location = New System.Drawing.Point(171, 103)
+        Me.keluar_Button.Location = New System.Drawing.Point(172, 103)
         Me.keluar_Button.Name = "keluar_Button"
         Me.keluar_Button.Size = New System.Drawing.Size(75, 34)
         Me.keluar_Button.TabIndex = 6
@@ -82,7 +82,7 @@ Partial Class Home
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(42, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(237, 33)
         Me.Label1.TabIndex = 6
@@ -152,7 +152,7 @@ Partial Class Home
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(344, 229)
+        Me.ClientSize = New System.Drawing.Size(347, 229)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Home"
