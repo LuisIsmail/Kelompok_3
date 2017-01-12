@@ -23,22 +23,22 @@ Partial Class Mhs1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim NIMLabel As System.Windows.Forms.Label
-        Dim NamaLabel As System.Windows.Forms.Label
+        Dim LabelNim As System.Windows.Forms.Label
+        Dim LabelNama As System.Windows.Forms.Label
         Dim ProdiLabel As System.Windows.Forms.Label
         Dim SemesterLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mhs1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
-        Me.Mhs1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Mhs1TableAdapter = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.Mhs1TableAdapter()
-        Me.TableAdapterManager = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager()
         Me.NIMTextBox = New System.Windows.Forms.TextBox()
+        Me.Mhs1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
         Me.NamaTextBox = New System.Windows.Forms.TextBox()
         Me.ProdiTextBox = New System.Windows.Forms.TextBox()
         Me.SemesterTextBox = New System.Windows.Forms.TextBox()
+        Me.Mhs1TableAdapter = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.Mhs1TableAdapter()
+        Me.TableAdapterManager = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager()
         Me.Mhs1DataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,23 +50,79 @@ Partial Class Mhs1
         Me.refreshButton = New System.Windows.Forms.Button()
         Me.saveButton = New System.Windows.Forms.Button()
         Me.addButton = New System.Windows.Forms.Button()
-        NIMLabel = New System.Windows.Forms.Label()
-        NamaLabel = New System.Windows.Forms.Label()
+        LabelNim = New System.Windows.Forms.Label()
+        LabelNama = New System.Windows.Forms.Label()
         ProdiLabel = New System.Windows.Forms.Label()
         SemesterLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Mhs1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Mhs1DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'LabelNim
+        '
+        LabelNim.AutoSize = True
+        LabelNim.Location = New System.Drawing.Point(20, 16)
+        LabelNim.Name = "LabelNim"
+        LabelNim.Size = New System.Drawing.Size(30, 13)
+        LabelNim.TabIndex = 0
+        LabelNim.Text = "NIM:"
+        AddHandler LabelNim.Click, AddressOf Me.LabelNim_Click
+        '
+        'LabelNama
+        '
+        LabelNama.AutoSize = True
+        LabelNama.Location = New System.Drawing.Point(20, 42)
+        LabelNama.Name = "LabelNama"
+        LabelNama.Size = New System.Drawing.Size(38, 13)
+        LabelNama.TabIndex = 2
+        LabelNama.Text = "Nama:"
+        '
+        'ProdiLabel
+        '
+        ProdiLabel.AutoSize = True
+        ProdiLabel.Location = New System.Drawing.Point(20, 68)
+        ProdiLabel.Name = "ProdiLabel"
+        ProdiLabel.Size = New System.Drawing.Size(34, 13)
+        ProdiLabel.TabIndex = 4
+        ProdiLabel.Text = "Prodi:"
+        '
+        'SemesterLabel
+        '
+        SemesterLabel.AutoSize = True
+        SemesterLabel.Location = New System.Drawing.Point(20, 94)
+        SemesterLabel.Name = "SemesterLabel"
+        SemesterLabel.Size = New System.Drawing.Size(54, 13)
+        SemesterLabel.TabIndex = 6
+        SemesterLabel.Text = "Semester:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(257, 45)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(34, 13)
+        Label1.TabIndex = 8
+        Label1.Text = "Tabel"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label2.Location = New System.Drawing.Point(12, 9)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(188, 31)
+        Label2.TabIndex = 9
+        Label2.Text = "SEMESTER I"
+        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(NIMLabel)
+        Me.GroupBox1.Controls.Add(LabelNim)
         Me.GroupBox1.Controls.Add(Me.NIMTextBox)
-        Me.GroupBox1.Controls.Add(NamaLabel)
+        Me.GroupBox1.Controls.Add(LabelNama)
         Me.GroupBox1.Controls.Add(Me.NamaTextBox)
         Me.GroupBox1.Controls.Add(ProdiLabel)
         Me.GroupBox1.Controls.Add(Me.ProdiTextBox)
@@ -79,15 +135,47 @@ Partial Class Mhs1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detail"
         '
-        'Projekvb1DataSet
+        'NIMTextBox
         '
-        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
-        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.NIMTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "NIM", True))
+        Me.NIMTextBox.Location = New System.Drawing.Point(80, 13)
+        Me.NIMTextBox.Name = "NIMTextBox"
+        Me.NIMTextBox.Size = New System.Drawing.Size(152, 20)
+        Me.NIMTextBox.TabIndex = 1
         '
         'Mhs1BindingSource
         '
         Me.Mhs1BindingSource.DataMember = "Mhs1"
         Me.Mhs1BindingSource.DataSource = Me.Projekvb1DataSet
+        '
+        'Projekvb1DataSet
+        '
+        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
+        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'NamaTextBox
+        '
+        Me.NamaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "Nama", True))
+        Me.NamaTextBox.Location = New System.Drawing.Point(80, 39)
+        Me.NamaTextBox.Name = "NamaTextBox"
+        Me.NamaTextBox.Size = New System.Drawing.Size(152, 20)
+        Me.NamaTextBox.TabIndex = 3
+        '
+        'ProdiTextBox
+        '
+        Me.ProdiTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "Prodi", True))
+        Me.ProdiTextBox.Location = New System.Drawing.Point(80, 65)
+        Me.ProdiTextBox.Name = "ProdiTextBox"
+        Me.ProdiTextBox.Size = New System.Drawing.Size(152, 20)
+        Me.ProdiTextBox.TabIndex = 5
+        '
+        'SemesterTextBox
+        '
+        Me.SemesterTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "Semester", True))
+        Me.SemesterTextBox.Location = New System.Drawing.Point(80, 91)
+        Me.SemesterTextBox.Name = "SemesterTextBox"
+        Me.SemesterTextBox.Size = New System.Drawing.Size(152, 20)
+        Me.SemesterTextBox.TabIndex = 7
         '
         'Mhs1TableAdapter
         '
@@ -111,74 +199,6 @@ Partial Class Mhs1
         Me.TableAdapterManager.MK5TableAdapter = Nothing
         Me.TableAdapterManager.MK7TableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'NIMLabel
-        '
-        NIMLabel.AutoSize = True
-        NIMLabel.Location = New System.Drawing.Point(20, 16)
-        NIMLabel.Name = "NIMLabel"
-        NIMLabel.Size = New System.Drawing.Size(30, 13)
-        NIMLabel.TabIndex = 0
-        NIMLabel.Text = "NIM:"
-        '
-        'NIMTextBox
-        '
-        Me.NIMTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "NIM", True))
-        Me.NIMTextBox.Location = New System.Drawing.Point(80, 13)
-        Me.NIMTextBox.Name = "NIMTextBox"
-        Me.NIMTextBox.Size = New System.Drawing.Size(126, 20)
-        Me.NIMTextBox.TabIndex = 1
-        '
-        'NamaLabel
-        '
-        NamaLabel.AutoSize = True
-        NamaLabel.Location = New System.Drawing.Point(20, 42)
-        NamaLabel.Name = "NamaLabel"
-        NamaLabel.Size = New System.Drawing.Size(38, 13)
-        NamaLabel.TabIndex = 2
-        NamaLabel.Text = "Nama:"
-        '
-        'NamaTextBox
-        '
-        Me.NamaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "Nama", True))
-        Me.NamaTextBox.Location = New System.Drawing.Point(80, 39)
-        Me.NamaTextBox.Name = "NamaTextBox"
-        Me.NamaTextBox.Size = New System.Drawing.Size(152, 20)
-        Me.NamaTextBox.TabIndex = 3
-        '
-        'ProdiLabel
-        '
-        ProdiLabel.AutoSize = True
-        ProdiLabel.Location = New System.Drawing.Point(20, 68)
-        ProdiLabel.Name = "ProdiLabel"
-        ProdiLabel.Size = New System.Drawing.Size(34, 13)
-        ProdiLabel.TabIndex = 4
-        ProdiLabel.Text = "Prodi:"
-        '
-        'ProdiTextBox
-        '
-        Me.ProdiTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "Prodi", True))
-        Me.ProdiTextBox.Location = New System.Drawing.Point(80, 65)
-        Me.ProdiTextBox.Name = "ProdiTextBox"
-        Me.ProdiTextBox.Size = New System.Drawing.Size(152, 20)
-        Me.ProdiTextBox.TabIndex = 5
-        '
-        'SemesterLabel
-        '
-        SemesterLabel.AutoSize = True
-        SemesterLabel.Location = New System.Drawing.Point(20, 94)
-        SemesterLabel.Name = "SemesterLabel"
-        SemesterLabel.Size = New System.Drawing.Size(54, 13)
-        SemesterLabel.TabIndex = 6
-        SemesterLabel.Text = "Semester:"
-        '
-        'SemesterTextBox
-        '
-        Me.SemesterTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Mhs1BindingSource, "Semester", True))
-        Me.SemesterTextBox.Location = New System.Drawing.Point(80, 91)
-        Me.SemesterTextBox.Name = "SemesterTextBox"
-        Me.SemesterTextBox.Size = New System.Drawing.Size(64, 20)
-        Me.SemesterTextBox.TabIndex = 7
         '
         'Mhs1DataGridView
         '
@@ -214,25 +234,6 @@ Partial Class Mhs1
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "Semester"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Semester"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(257, 45)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(34, 13)
-        Label1.TabIndex = 8
-        Label1.Text = "Tabel"
-        '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label2.Location = New System.Drawing.Point(12, 9)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(188, 31)
-        Label2.TabIndex = 9
-        Label2.Text = "SEMESTER I"
         '
         'hapusButton
         '
@@ -331,8 +332,8 @@ Partial Class Mhs1
         Me.Text = "Mhs1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Mhs1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Mhs1DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
