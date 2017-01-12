@@ -25,13 +25,15 @@ Partial Class Dosen
         Me.components = New System.ComponentModel.Container()
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim NIKLabel As System.Windows.Forms.Label
-        Dim NamaLabel As System.Windows.Forms.Label
+        Dim LabelNIK As System.Windows.Forms.Label
+        Dim LabelNama As System.Windows.Forms.Label
         Dim Lulusan__S1__S2__S3_Label As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dosen))
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Detail = New System.Windows.Forms.GroupBox()
         Me.NIKTextBox = New System.Windows.Forms.TextBox()
+        Me.DosenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
         Me.NamaTextBox = New System.Windows.Forms.TextBox()
         Me.Lulusan__S1__S2__S3_TextBox = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -42,23 +44,21 @@ Partial Class Dosen
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CariButton = New System.Windows.Forms.Button()
         Me.DosenDataGridView = New System.Windows.Forms.DataGridView()
-        Me.cariText = New System.Windows.Forms.TextBox()
-        Me.DosenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Projekvb1DataSet = New Kelompok3_ProjectVB.projekvb1DataSet()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cariText = New System.Windows.Forms.TextBox()
         Me.DosenTableAdapter = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.DosenTableAdapter()
         Me.TableAdapterManager = New Kelompok3_ProjectVB.projekvb1DataSetTableAdapters.TableAdapterManager()
         Label1 = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
-        NIKLabel = New System.Windows.Forms.Label()
-        NamaLabel = New System.Windows.Forms.Label()
+        LabelNIK = New System.Windows.Forms.Label()
+        LabelNama = New System.Windows.Forms.Label()
         Lulusan__S1__S2__S3_Label = New System.Windows.Forms.Label()
         Me.Detail.SuspendLayout()
-        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DosenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -83,23 +83,23 @@ Partial Class Dosen
         Label2.TabIndex = 36
         Label2.Text = "Cari :"
         '
-        'NIKLabel
+        'LabelNIK
         '
-        NIKLabel.AutoSize = True
-        NIKLabel.Location = New System.Drawing.Point(9, 23)
-        NIKLabel.Name = "NIKLabel"
-        NIKLabel.Size = New System.Drawing.Size(28, 13)
-        NIKLabel.TabIndex = 0
-        NIKLabel.Text = "NIK:"
+        LabelNIK.AutoSize = True
+        LabelNIK.Location = New System.Drawing.Point(9, 23)
+        LabelNIK.Name = "LabelNIK"
+        LabelNIK.Size = New System.Drawing.Size(28, 13)
+        LabelNIK.TabIndex = 0
+        LabelNIK.Text = "NIK:"
         '
-        'NamaLabel
+        'LabelNama
         '
-        NamaLabel.AutoSize = True
-        NamaLabel.Location = New System.Drawing.Point(9, 49)
-        NamaLabel.Name = "NamaLabel"
-        NamaLabel.Size = New System.Drawing.Size(38, 13)
-        NamaLabel.TabIndex = 2
-        NamaLabel.Text = "Nama:"
+        LabelNama.AutoSize = True
+        LabelNama.Location = New System.Drawing.Point(9, 49)
+        LabelNama.Name = "LabelNama"
+        LabelNama.Size = New System.Drawing.Size(38, 13)
+        LabelNama.TabIndex = 2
+        LabelNama.Text = "Nama:"
         '
         'Lulusan__S1__S2__S3_Label
         '
@@ -125,9 +125,9 @@ Partial Class Dosen
         'Detail
         '
         Me.Detail.BackColor = System.Drawing.Color.Transparent
-        Me.Detail.Controls.Add(NIKLabel)
+        Me.Detail.Controls.Add(LabelNIK)
         Me.Detail.Controls.Add(Me.NIKTextBox)
-        Me.Detail.Controls.Add(NamaLabel)
+        Me.Detail.Controls.Add(LabelNama)
         Me.Detail.Controls.Add(Me.NamaTextBox)
         Me.Detail.Controls.Add(Lulusan__S1__S2__S3_Label)
         Me.Detail.Controls.Add(Me.Lulusan__S1__S2__S3_TextBox)
@@ -146,6 +146,16 @@ Partial Class Dosen
         Me.NIKTextBox.Name = "NIKTextBox"
         Me.NIKTextBox.Size = New System.Drawing.Size(100, 20)
         Me.NIKTextBox.TabIndex = 1
+        '
+        'DosenBindingSource
+        '
+        Me.DosenBindingSource.DataMember = "Dosen"
+        Me.DosenBindingSource.DataSource = Me.Projekvb1DataSet
+        '
+        'Projekvb1DataSet
+        '
+        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
+        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'NamaTextBox
         '
@@ -265,24 +275,6 @@ Partial Class Dosen
         Me.DosenDataGridView.Size = New System.Drawing.Size(342, 220)
         Me.DosenDataGridView.TabIndex = 38
         '
-        'cariText
-        '
-        Me.cariText.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "NIK", True))
-        Me.cariText.Location = New System.Drawing.Point(410, 41)
-        Me.cariText.Name = "cariText"
-        Me.cariText.Size = New System.Drawing.Size(175, 20)
-        Me.cariText.TabIndex = 6
-        '
-        'DosenBindingSource
-        '
-        Me.DosenBindingSource.DataMember = "Dosen"
-        Me.DosenBindingSource.DataSource = Me.Projekvb1DataSet
-        '
-        'Projekvb1DataSet
-        '
-        Me.Projekvb1DataSet.DataSetName = "projekvb1DataSet"
-        Me.Projekvb1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "NIK"
@@ -300,6 +292,14 @@ Partial Class Dosen
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "Lulusan (S1, S2, S3)"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Lulusan (S1, S2, S3)"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'cariText
+        '
+        Me.cariText.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DosenBindingSource, "NIK", True))
+        Me.cariText.Location = New System.Drawing.Point(410, 41)
+        Me.cariText.Name = "cariText"
+        Me.cariText.Size = New System.Drawing.Size(175, 20)
+        Me.cariText.TabIndex = 6
         '
         'DosenTableAdapter
         '
@@ -349,9 +349,9 @@ Partial Class Dosen
         Me.Text = "Dosen"
         Me.Detail.ResumeLayout(False)
         Me.Detail.PerformLayout()
-        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DosenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Projekvb1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DosenDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
